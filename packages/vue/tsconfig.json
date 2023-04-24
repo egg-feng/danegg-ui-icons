@@ -3,7 +3,7 @@
     "module": "ESNext",
     "declaration": true,
     "baseUrl": ".",
-    "declarationDir": "./dist/types",
+    "declarationDir": "../../dist/icons-vue/dist/types",
     "strict": true,
     "noImplicitAny": true,
     "moduleResolution": "node",
