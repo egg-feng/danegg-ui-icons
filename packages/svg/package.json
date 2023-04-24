@@ -1,6 +1,6 @@
 {
   "name": "@danegg-ui/icons-svg",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "scripts": {
     "optimize": "svgo -f . -o ."
