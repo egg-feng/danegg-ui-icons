@@ -1,6 +1,6 @@
 {
   "name": "@danegg-ui/icons-vue",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Vue components of Danegg UI Icons collection.",
   "type": "module",
   "scripts": {
