@@ -1,0 +1,21 @@
+{
+  "name": "danegg-ui-icons",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The Icon for Danegg UI",
+  "scripts": {
+    "dev": "pnpm run -C playground dev",
+    "build": "pnpm run -C ./packages/vue build",
+    "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx,.json --max-warnings 0",
+    "lint:fix": "eslint --fix . --ext .vue,.js,.ts,.jsx,.tsx,.json --max-warnings 0",
+    "format": "prettier --write . && pnpm run -C ./packages/svg optimize",
+    "release": "bumpp -r"
+  },
+  "keywords": [],
+  "author": "feng",
+  "license": "ISC",
+  "devDependencies": {
+    "bumpp": "^9.1.0",
+    "typescript": "^4.9.5"
+  }
+}

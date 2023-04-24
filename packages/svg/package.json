@@ -1,0 +1,21 @@
+{
+  "name": "@danegg-ui/icons-svg",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "optimize": "svgo -f . -o ."
+  },
+  "keywords": [
+    "icon",
+    "svg",
+    "danegg-ui"
+  ],
+  "files": [
+    "*.svg"
+  ],
+  "author": "feng",
+  "license": "ISC",
+  "devDependencies": {
+    "optimize": "^0.1.7"
+  }
+}
