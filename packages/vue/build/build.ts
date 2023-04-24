@@ -1,4 +1,5 @@
 import path from "node:path";
+import { copyFile } from "node:fs/promises";
 import consola from "consola";
 import chalk from "chalk";
 import { build } from "esbuild";
@@ -6,7 +7,7 @@ import GlobalsPlugin from "esbuild-plugin-globals";
 import vue from "unplugin-vue/dist/esbuild";
 import { emptyDir } from "fs-extra";
 import { version } from "../package.json";
-import { pathOutput, pathSrc } from "./path";
+import { iVOutput, pathSrc, buildOutput, pkgPath } from "./path";
 import type { BuildOptions, Format } from "esbuild";
 
 const buildBundle = () => {
@@ -30,7 +31,7 @@ const buildBundle = () => {
       banner: {
         js: `/*! Danegg UI Icons Vue v${version} */\n`,
       },
-      outdir: pathOutput,
+      outdir: iVOutput,
     };
     if (format === "iife") {
       options.plugins!.push(
@@ -63,6 +64,7 @@ const buildBundle = () => {
         outExtension: { ".js": ".cjs" },
         minify,
       }),
+      copyFile(pkgPath, path.join(buildOutput, "package.json")),
     ]);
   };
 
@@ -70,6 +72,6 @@ const buildBundle = () => {
 };
 
 consola.info(chalk.blue("cleaning dist..."));
-await emptyDir(pathOutput);
+await emptyDir(buildOutput);
 consola.info(chalk.blue("building..."));
 await buildBundle();
